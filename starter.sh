@@ -1,9 +1,9 @@
 #!/bin/bash
 
-GLOBAL_VAR="I am a global variable"
  
-function test {
-  echo $GLOBAL_VAR
+# open Sublime 3
+function startEditor {
+  subl
 }
  
-test
+startEditor
