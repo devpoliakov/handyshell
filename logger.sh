@@ -1,29 +1,31 @@
 #!/bin/bash
 
 
+logDir='../logdir'
+logYear=$logDir/$(date +'%Y')
+logFile=$logYear/$(date +'%m').log
 
-
-if [ -d ../logdir ]
+if [ -d $logDir ]
 then
 echo "Directory exist"
 else
-`mkdir ../logdir`
+`mkdir $logDir`
 echo "Directory created"
 fi
 
 
-if [ -d ../logdir/$(date +'%Y') ]
+if [ -d $logYear ]
 then
 echo "Year directory exist"
 else
-`mkdir ../logdir/$(date +'%Y')`
+`mkdir $logYear`
 echo "Year directory created"
 fi
 
-if [ -f ../logdir/$(date +'%Y')/$(date +'%m').log ]
+if [ -f $logFile ]
 then
 echo "Month log exist"
 else
-`touch ../logdir/$(date +'%Y')/$(date +'%m').log`
+`touch $logFile`
 echo "Month log created"
 fi
